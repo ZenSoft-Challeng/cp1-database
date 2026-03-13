@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mercado Interestelar</title>
+</head>
+
+<body>
+
+<h1>🌌 Mercado Interestelar - Kepler 186f</h1>
+
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Nome</th>
+<th>Setor</th>
+<th>Preço</th>
+<th>Estoque</th>
+</tr>
+
+{% for ativo in ativos %}
+<tr>
+<td>{{ativo[0]}}</td>
+<td>{{ativo[1]}}</td>
+<td>{{ativo[2]}}</td>
+<td>{{ativo[3]}}</td>
+<td>{{ativo[4]}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<h2>Aplicar Evento de Flutuação</h2>
+
+<form action="/processar" method="post">
+
+<label>Evento</label>
+<select name="evento">
+<option value="RADIACAO">Radiação Gama</option>
+<option value="MINA">Descoberta de Mina</option>
+</select>
+
+<br><br>
+
+<label>Setor</label>
+<select name="setor">
+<option value="MINERAL">Mineral</option>
+<option value="COMBUSTIVEL">Combustível</option>
+<option value="DADOS">Dados</option>
+</select>
+
+<br><br>
+
+<button type="submit">Aplicar Evento</button>
+
+</form>
+
+</body>
+</html>
